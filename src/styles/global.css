@@ -1,0 +1,275 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --text: #111;
+  --text-muted: #777;
+  --bg: #f7f5f0;
+  --max-width: 640px;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', sans-serif;
+}
+
+html {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+h1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+p {
+  margin-bottom: 0.75rem;
+}
+
+ul,
+ol {
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+pre {
+  background: rgba(0, 0, 0, 0.04);
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+code {
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+  font-size: 0.85em;
+}
+
+:not(pre) > code {
+  background: rgba(0, 0, 0, 0.04);
+  padding: 0.1em 0.3em;
+}
+
+hr {
+  border: none;
+  margin: 2rem 0;
+}
+
+/* Layout */
+
+.site-outer {
+  display: flex;
+  gap: 4rem;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.site-wrapper {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* Nav */
+
+.site-nav {
+  font-family: var(--sans);
+  padding: 3rem 0 0;
+  margin-bottom: 4rem;
+}
+
+.site-nav .site-name {
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.site-nav .site-name:hover {
+  text-decoration: none;
+}
+
+/* Sidebar */
+
+.site-sidebar {
+  font-family: var(--sans);
+  padding-top: 7rem;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.site-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 2;
+}
+
+.site-sidebar a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-sidebar a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.site-sidebar .muted {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .site-outer {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .site-sidebar {
+    position: static;
+    padding-top: 0;
+    padding-bottom: 2rem;
+    order: -1;
+  }
+}
+
+/* Footer */
+
+.site-footer {
+  font-family: var(--sans);
+  margin-top: auto;
+  padding: 4rem 0 2.5rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+/* Item lists (blog + projects) */
+
+.item-list {
+  font-family: var(--sans);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-list li {
+  margin-bottom: 1rem;
+}
+
+.item-list a {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.item-list a:hover {
+  text-decoration: none;
+}
+
+.item-list a:hover .item-title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.item-list .item-title {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.item-list .item-desc {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+}
+
+/* Prose (blog post body) */
+
+.prose {
+  line-height: 1.75;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+}
+
+.prose a {
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  text-decoration-color: var(--text);
+}
+
+.prose blockquote {
+  padding-left: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  font-style: italic;
+}
+
+/* Blog post date */
+
+.post-date {
+  font-family: var(--sans);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 2.5rem;
+}

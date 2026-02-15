@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+---
+
+<Base title="Projects" description="Projects by Henry Zhang.">
+  <h1>Projects</h1>
+  <ul class="item-list">
+    {projects.map((project) => (
+      <li>
+        <a href={project.data.url || project.data.repo || '#'} target="_blank" rel="noopener noreferrer">
+          <span class="item-title">{project.data.title}</span>
+          <span class="item-desc">{project.data.description}</span>
+        </a>
+        {project.data.post && (
+          <a class="item-post-link" href={project.data.post}>Writeup →</a>
+        )}
+      </li>
+    ))}
+  </ul>
+</Base>
+
+<style>
+  .item-post-link {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-top: 0.25rem;
+    display: inline-block;
+  }
+
+  .item-post-link:hover {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+</style>

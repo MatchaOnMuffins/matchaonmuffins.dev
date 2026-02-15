@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<Base title="Blog" description="Blog posts by Henry Zhang.">
+  <h1>Blog</h1>
+  <ul class="item-list">
+    {posts.map((post) => (
+      <li>
+        <a href={`/blog/${post.id}`}>
+          <span class="item-title">{post.data.title}</span>
+          {post.data.description && (
+            <span class="item-desc">{post.data.description}</span>
+          )}
+        </a>
+      </li>
+    ))}
+  </ul>
+</Base>
