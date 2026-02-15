@@ -33,6 +33,13 @@ const pageImage = image ? new URL(image, Astro.site).href : undefined;
     <meta name="twitter:description" content={pageDescription} />
     {pageImage && <meta name="twitter:image" content={pageImage} />}
     <title>{pageTitle}</title>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-76WX1PENVF"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-76WX1PENVF');
+    </script>
   </head>
   <body>
     <div class="site-outer">
