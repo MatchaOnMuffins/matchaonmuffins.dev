@@ -72,6 +72,36 @@ ol {
   margin-bottom: 0.75rem;
 }
 
+li {
+  margin-bottom: 0.75rem;
+}
+
+dl {
+  margin-bottom: 0.75rem;
+  counter-reset: question;
+}
+
+dt {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  counter-increment: question;
+}
+
+dt::before {
+  content: counter(question) ". ";
+}
+
+dd {
+  margin-left: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+dt + dt {
+  margin-top: 1.5rem;
+}
+
 pre {
   background: rgba(0, 0, 0, 0.04);
   padding: 0.75rem 1rem;
@@ -89,6 +119,13 @@ code {
 :not(pre) > code {
   background: rgba(0, 0, 0, 0.04);
   padding: 0.1em 0.3em;
+}
+
+blockquote {
+  padding-left: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  font-style: italic;
 }
 
 hr {

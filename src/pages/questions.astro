@@ -2,20 +2,88 @@
 import Base from "../layouts/Base.astro";
 ---
 
-<Base title="Questions">
-    <h1>Questions</h1>
-    <p>Some questions I keep in the back of my mind.</p>
+<Base
+    title="Questions"
+    description="Some questions I keep in the back of my mind."
+>
+    <h1>12 Favorite Problems</h1>
+    <blockquote>
+        <p>
+            You have to keep a dozen of your favorite problems constantly
+            present in your mind, although by and large they will lay in a
+            dormant state. Every time you hear or read a new trick or a new
+            result, test it against each of your twelve problems to see whether
+            it helps. Every once in a while there will be a hit, and people will
+            say, "How did he do it? He must be a genius!"
+        </p>
+        <p>— Richard Feynman</p>
+    </blockquote>
 
-    <ul>
-        <li>
+    <dl>
+        <dt>
             What really matters more for a product? Distribution? Or having a
             good product?
-        </li>
+        </dt>
+        <dd>
+            The most obvious case that comes to mind is Roy Lee's Cluely, the AI
+            cheating tool that went so viral it landed a <a
+                href="https://a16z.com/announcement/investing-in-cluely/"
+                >$15M Series A from a16z</a
+            > at a $120M valuation. However, soon after the investment, it became
+            almost crystal clear to users that the product could not sustain what
+            the distribution initially promised. A series of issues plagued cluely's
+            product: latency issues, a data breach, and ultimately an un-winnable
+            arms race between interview platforms to ensure hiring integrity.
+        </dd>
+        <dd>
+            These issues ultimately led to Cluely's pivot to enterprise
+            software, ditching the original "undetectable cheating" product
+            altogether. Allegedly, ARR doubled within a week of the pivot, but
+            that's only because the underlying technology found a use-case where
+            the product actually mattered.
+        </dd>
 
-        <li>
-            In current AGI and AGI-adjacent research, are the remaining major
-            challenges fundamentally scientific in nature, or are they primarily
-            engineering and systems-integration problems?
-        </li>
-    </ul>
+        <dt>
+            What are the remaining barriers to AGI that can't be solved by
+            scaling compute and engineering effort?
+        </dt>
+
+        <dt>
+            If AI drives the marginal cost of implementation to zero, what makes
+            one engineer more valuable than another?
+        </dt>
+        <dd>
+            The obvious candidates are architectural judgment, product
+            intuition, or something like taste — but those feel like they might
+            just be the next things to get automated. Maybe the answer is
+            something less legible, like knowing which problems are worth
+            solving in the first place.
+        </dd>
+
+        <dt>What exactly is taste?</dt>
+
+        <dt>Is taste ultimately a data problem?</dt>
+
+        <dt>
+            If anyone can build anything, does the concept of a product still
+            make sense?
+        </dt>
+        <dd>
+            If the cost of building is near-zero, maybe the unit of value shifts
+            from the product to something upstream — taste, curation, knowing
+            what to build. Or maybe products just become disposable and
+            single-use.
+        </dd>
+
+        <dt>
+            If engineering becomes near-free, does open source lose its reason
+            to exist?
+        </dt>
+        <dd>
+            The easiest counter-argument that comes to mind is the lack of
+            engineering taste for in-house builders. However, what exactly is
+            taste, and is it something that can be solved using more data? This
+            ultimately goes back to the taste question above.
+        </dd>
+    </dl>
 </Base>

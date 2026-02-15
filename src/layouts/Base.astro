@@ -1,70 +1,92 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
+    title?: string;
+    description?: string;
+    image?: string;
 }
 
 const { title, description, image } = Astro.props;
-const siteName = 'Henry Zhang';
+const siteName = "Henry Zhang";
 const pageTitle = title ? `${title} — ${siteName}` : siteName;
-const pageDescription = description || 'Personal site of Henry Zhang.';
+const pageDescription = description || "Notes from Henry Zhang.";
 const pageImage = image ? new URL(image, Astro.site).href : undefined;
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={pageDescription} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" />
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={pageDescription} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url.href} />
-    <meta property="og:site_name" content={siteName} />
-    {pageImage && <meta property="og:image" content={pageImage} />}
-    <meta name="twitter:card" content={pageImage ? "summary_large_image" : "summary"} />
-    <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={pageDescription} />
-    {pageImage && <meta name="twitter:image" content={pageImage} />}
-    <title>{pageTitle}</title>
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-76WX1PENVF"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-76WX1PENVF');
-    </script>
-  </head>
-  <body>
-    <div class="site-outer">
-      <div class="site-wrapper">
-        <header class="site-nav">
-          <a href="/" class="site-name">{siteName}</a>
-        </header>
-        <main>
-          <slot />
-        </main>
-        <footer class="site-footer">
-          <p>{siteName}</p>
-        </footer>
-      </div>
-      <aside class="site-sidebar">
-        <ul>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/questions">Questions</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="https://github.com/MatchaOnMuffins">GitHub ↗</a></li>
-          <li><a href="https://www.linkedin.com/in/henry-zhang-umich/">LinkedIn ↗</a></li>
-          <li class="muted"><a href="/matchaonmuffins">matchaonmuffins</a></li>
-        </ul>
-      </aside>
-    </div>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content={pageDescription} />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
+        />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={Astro.url.href} />
+        <meta property="og:site_name" content={siteName} />
+        {pageImage && <meta property="og:image" content={pageImage} />}
+        <meta
+            name="twitter:card"
+            content={pageImage ? "summary_large_image" : "summary"}
+        />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        {pageImage && <meta name="twitter:image" content={pageImage} />}
+        <title>{pageTitle}</title>
+        <script
+            is:inline
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-76WX1PENVF"
+        ></script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-76WX1PENVF");
+        </script>
+    </head>
+    <body>
+        <div class="site-outer">
+            <div class="site-wrapper">
+                <header class="site-nav">
+                    <a href="/" class="site-name">{siteName}</a>
+                </header>
+                <main>
+                    <slot />
+                </main>
+                <footer class="site-footer">
+                    <p>{siteName}</p>
+                </footer>
+            </div>
+            <aside class="site-sidebar">
+                <ul>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/questions">Questions</a></li>
+                    <li><a href="/productivity">Productivity</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li>
+                        <a href="https://github.com/MatchaOnMuffins">GitHub ↗</a
+                        >
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/henry-zhang-umich/"
+                            >LinkedIn ↗</a
+                        >
+                    </li>
+                    <li class="muted">
+                        <a href="/matchaonmuffins">matchaonmuffins</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </body>
 </html>
