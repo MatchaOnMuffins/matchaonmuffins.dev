@@ -2,6 +2,7 @@
 title: A GPT Inside a Prime Number
 description: A fully functional GPT model whose source code is a 3600-digit prime.
 pubDate: 2026-02-14
+image: /blog/femtogpt/femtoGPT.jpeg
 featured: true
 ---
 

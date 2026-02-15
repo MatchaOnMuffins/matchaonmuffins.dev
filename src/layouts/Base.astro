@@ -4,12 +4,14 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image } = Astro.props;
 const siteName = 'Henry Zhang';
 const pageTitle = title ? `${title} — ${siteName}` : siteName;
 const pageDescription = description || 'Personal site of Henry Zhang.';
+const pageImage = image ? new URL(image, Astro.site).href : undefined;
 ---
 
 <!doctype html>
@@ -20,6 +22,16 @@ const pageDescription = description || 'Personal site of Henry Zhang.';
     <meta name="description" content={pageDescription} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:site_name" content={siteName} />
+    {pageImage && <meta property="og:image" content={pageImage} />}
+    <meta name="twitter:card" content={pageImage ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    {pageImage && <meta name="twitter:image" content={pageImage} />}
     <title>{pageTitle}</title>
   </head>
   <body>
