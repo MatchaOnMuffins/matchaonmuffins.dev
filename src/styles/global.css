@@ -172,6 +172,10 @@ hr {
   text-decoration: none;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 /* Sidebar */
 
 .site-sidebar {
@@ -209,16 +213,16 @@ hr {
 }
 
 @media (max-width: 600px) {
-  .site-outer {
-    flex-direction: column;
-    gap: 0;
+  .site-sidebar {
+    display: none;
   }
 
-  .site-sidebar {
-    position: static;
-    padding-top: 0;
-    padding-bottom: 2rem;
-    order: -1;
+  .mobile-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
   }
 }
 

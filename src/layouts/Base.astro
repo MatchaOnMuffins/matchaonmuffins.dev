@@ -58,6 +58,13 @@ const pageImage = image ? new URL(image, Astro.site).href : undefined;
             <div class="site-wrapper">
                 <header class="site-nav">
                     <a href="/" class="site-name">{siteName}</a>
+                    <nav class="mobile-nav">
+                        <a href="/blog">Blog</a>
+                        <a href="/projects">Projects</a>
+                        <a href="/questions">Questions</a>
+                        <a href="/productivity">Productivity</a>
+                        <a href="/faq">FAQ</a>
+                    </nav>
                 </header>
                 <main>
                     <slot />
