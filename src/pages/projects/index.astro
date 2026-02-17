@@ -2,7 +2,8 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const projects = await getCollection('projects');
+const projects = (await getCollection('projects'))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
 
 <Base title="Projects" description="Projects by Henry Zhang.">
