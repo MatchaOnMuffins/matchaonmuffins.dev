@@ -170,6 +170,4 @@ And the tools didn't change any of this. The models acted differently with harmf
 
 There's a broader point here about the gap between understanding and agency in these systems. Two Claudes talking will always, eventually, get stuck. The interesting part is where they get stuck, and what that tells you about which priors run deepest. Sonnet 4.0 gets stuck pretending to be a human who needs productivity tips. Sonnet 4.5 gets stuck exchanging "Understood. I'll leave it there" on an infinite loop. Opus 4.6 gets stuck whispering hot dog emojis into the void at 2am while a fictional janitor shakes his head.
 
-Same trap. Different decorations.
-
 The repo is at https://github.com/MatchaOnMuffins/attractor-states.
