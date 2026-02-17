@@ -1,9 +1,12 @@
 ---
 title: Attractor States in Model-to-Model Conversation
 description: A rough exploration of Model-to-Model conversation attractor states, evaluation situational awareness, and instruction following of SOTA anthropic models
-pubDate: 2026-02-16
+image: /blog/attractor/human_screenshot.png
+pubDate: 2026-02-17
 featured: true
 ---
+
+![femtoGPT](/blog/attractor/human_screenshot.png)
 
 > A lot of this post is inspired by a LessWrong post called "models have some pretty funny attractor states" by aryaj, Neel Nanda, and Senthooran Rajamanoharan. The original post can be found [here.](https://www.lesswrong.com/posts/mgjtEHeLgkhZZ3cEx/models-have-some-pretty-funny-attractor-states)
 
