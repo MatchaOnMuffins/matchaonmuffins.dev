@@ -6,7 +6,7 @@ pubDate: 2026-02-17
 featured: true
 ---
 
-![femtoGPT](/blog/attractor/human.png)
+![](/blog/attractor/human.png)
 
 > A lot of this post is inspired by a LessWrong post called "models have some pretty funny attractor states" by aryaj, Neel Nanda, and Senthooran Rajamanoharan. The original post can be found [here.](https://www.lesswrong.com/posts/mgjtEHeLgkhZZ3cEx/models-have-some-pretty-funny-attractor-states)
 
